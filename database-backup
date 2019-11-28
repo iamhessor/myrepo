@@ -1,5 +1,5 @@
 #!/bin/bash
-DUMP=/home/noname/dump.sql
+DUMP=/home/$USER/dump.sql
 backup(){
 sudo mysqldump -A  > $DUMP
 if [ $? -ne 0 ]
