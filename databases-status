@@ -1,0 +1,9 @@
+#!/bin/bash
+while $1
+do
+	date=`date`
+	mysql -uroot -ppass -h 127.0.0.1 -P 3307 -e "show databases" &>/dev/null && echo "$date ----- MySQL 1 ----- is up!" || echo "$date ----- MySQL 1 ----- is down!"
+	mysql -uroot -p123 -h 127.0.0.1 -P 3308 -e "show databases" &>/dev/null && echo "$date ----- MySQL 2 ----- is up!" || echo "$date ----- MySQL 2 ----- is down!"
+	echo " "
+	sleep 30
+done

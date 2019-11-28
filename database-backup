@@ -1,0 +1,16 @@
+#!/bin/bash
+DUMP=/home/noname/dump.sql
+backup(){
+sudo mysqldump -A  > $DUMP
+if [ $? -ne 0 ]
+then
+	sudo systemctl start mariadb
+	backup
+fi
+}
+backup
+if [ -f $DUMP ]
+then
+	echo "OK! Dump is in $DUMP"
+fi
+
