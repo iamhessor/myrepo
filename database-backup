@@ -11,6 +11,6 @@ fi
 backup
 if [ -f $DUMP ]
 then
-	echo "OK! Dump is in $DUMP"
+	echo "Success! Dump is in $DUMP"
 fi
 
